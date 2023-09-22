@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #3faf82;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  cursor: pointer;
+}
+
+.menu div{
+    width: 100px;
+    height: 10px;
+    background-color: white;
+    box-shadow: 0 4px 20px #00000030;
+    border-radius: 2px;
+    transition: all 1.5s;
+}
+
+.menu.active div:nth-child(2){
+    transform: scale(0);
+    opacity: 0;
+}
+
+.menu.active div:nth-child(1){
+    animation: div1anim 1s ease-in-out forwards;
+}
+
+@keyframes div1anim {
+    50%{
+        transform: translateY(26px);
+    }
+    100%{
+        transform: translateY(26px) rotatez(45deg);
+    }
+}
+
+.menu.active div:nth-child(3){
+    animation: div2anim 1s ease-in-out forwards;
+}
+
+@keyframes div2anim {
+    50%{
+        transform: translateY(-26px);
+    }
+    100%{
+        transform: translateY(-26px) rotatez(135deg);
+    }
+}
+
+.menu div:nth-child(1){
+    animation: div1revanim 1s ease-in-out forwards;
+}
+
+@keyframes div1revanim {
+    0%{
+        transform: translateY(26px) rotatez(45deg);
+    }
+    50%{
+        transform: translateY(26px) rotateZ(0deg);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.menu div:nth-child(3){
+    animation: div2revanim 1s ease-in-out forwards;
+}
+
+@keyframes div2revanim {
+    0%{
+        transform: translateY(-26px) rotatez(135deg);
+    }
+    50%{
+        transform: translateY(-26px) rotateZ(0deg);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
